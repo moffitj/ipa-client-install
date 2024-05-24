@@ -206,7 +206,7 @@ echo ""
 ssh root@$IPA <<EOL
 ipa host-add --force --ip-address=$CLIENT_IP $HOSTNAME
 rm -f /root/krb5.keytab
-ipa-getkeytab -s ipa.zcore.local -p host/$HOSTNAME@ZCORE.LOCAL -k /root/krb5.keytab
+ipa-getkeytab -s $IPA -p host/$HOSTNAME@$DOMAIN_UP -k /root/krb5.keytab
 EOL
 
 
